@@ -17,7 +17,7 @@
 - rapidità e immediatezza |
 - stringhe centralizzate in unico posto |
 - possibilità di ricerca concordanza fra varie risorse |
-- *congelamento* stringhe dopo revisione |
+- congelamento stringhe dopo revisione |
 
 
 ---
