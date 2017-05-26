@@ -1,82 +1,98 @@
-# Stato della traduzione di QGIS 3
+# Processing Test
 
 
 ---
 
 
-## Transifex
+## Cosa sono i test di Processing
 
-- iscrizione e traduzione immediata delle stringhe |
-- stringhe tradotte subito salvate |
-- possibilità di tradurre offline |
-
----
-
-## Transifex Pro
-
-- rapidità e immediatezza |
-- stringhe centralizzate in unico posto |
-- possibilità di ricerca concordanza fra varie risorse |
-- congelamento stringhe dopo revisione |
-
+- servono per garantire la stabilità degli algoritmi |
+- procedura: |
+    - lancio algoritmo con dati di test |
+    - verifica risultati |
+    - caricamento file di output sul repository |
 
 ---
 
-## Transifex Contro
+## Come funzionano i test?
 
-- difficoltà di trovare il contesto |
-- interfaccia traduzione troppo ricca |
-- richiede un minimo di pratica |
+- Integrazione continua su Travis |
+- esecuzione algoritmo e verifica risultati |
+- se corretti, test passato e "garanzia" stabilità algoritmo |
+- se risultati in background diversi non corrispondono, test fallisce: |
+    - controllo algoritmo se ha errori |
+    - eventuale fix |
+    - controllo del risultato |
 
----
-
-### Stato della traduzione
-
----
-
-## QGIS Desktop (GUI)
-
-- 18.050 stringhe totali |
-- 99% stringhe tradotte: continuo aggiornamento di funzionalità -> continuo cambiamento stringhe |
-- 6102 stringhe da revisionare: in realtà sono 15.00 per armonizzare l'insieme |
-- tradotte 2041 stringhe anno solare 2017 |
 
 ---
 
-## QGIS Documentation
+## Difficoltà riscontrate (1)
 
-- 26.855 stringhe da tradurre |
-- suddivisione in molti file diversi |
-- aggiornamento continuo del manuale upstream |
-- molti algoritmi non tradotti sono algoritmi di provider di Processing (SAGA, GDAL, TauDem...) |
-
----
-
-## QGIS Web
-
-- 3.849 stringhe da tradurre |
-- suddivisione molti file diversi |
-- % completamento bassa a causa dei molti casi di studio |
+- file di output consigliato è GML (diverse limitazioni) |
+- difficoltà del framework, non è di immediato utilizzo |
+- continuo aggiornamento del codice |
+- Travis timeout durante la compilazione |
+- discrepanza minima di coordinate (approssimazione decimali) |
 
 ---
 
-### Considerazioni generali sulla traduzione (1)
+## Difficoltà riscontrate (2)
 
-- attività in crescita nell'ultimo periodo (ottimo!) |
-- se in dubbio su terminologia o contesto è meglio NON tradurre |
-- difficoltà di revisione e ricerca concordanza: |
-    - terminologia uguale in manuale, web e GUI |
-    - Tx aiuta con la funzione di riceca concordanza |
-    - Tx non aiuta a capire il contesto |
-- ricco glossario da utilizzare |
+- molti algoritmi non sono testabili: |
+    - algoritmi che non restituiscono dati (selezione) |
+    - algoritmi che caricano dati su PostGIS o SpatiaLite |
+    - a volte verifiche troppo restrittive (aggiunta campo tabella, verifica estensione layer -> problema di prima) |
+- tipo di output formato testo (es. info layer) difficili da testare (regex) |
 
 ---
 
-### Considerazioni generali sulla traduzione (2)
+## Stato dei test
 
-- la conscenza dell'inglese è necessaria: se non si è sicuri della terminologia, chiedere in lista. È più complicato correggere che tradurre |
-- se si trovano degli errori, segnalarli alla comunità! Correggerli è banale, scovarli no |
-- partecipare alle discussioni sulla terminologia sulla lista, l'opinione di tutti è importante |
+- tutto è su repository https://github.com/ghtmtt/qgis_test_script: |
+
+---
+
+## Stato dei test GDAL
+
+- 49 algoritmi totali |
+- 35 algoritmi testati: |
+    - 17 algortmi corretti |
+    - 18 algoritmi con problemi | 
+    - 8 algoritmi mancanti |
+
+---
+
+## Stato dei test QGIS
+
+- 154 algoritmi totali |
+- 115 algoritmi testati: |
+    - 24 algortmi corretti |
+    - 29 algoritmi con problemi | 
+    - 39 algoritmi mancanti |
+
+---
+
+## Risultati ottenuti
+
+- molti algoritmi adesso sono "blindati" |
+- diversi ticket aperti e risolti: |
+    - GDAL 7 |
+    - QGIS 5 |
+
+---
+
+### Considerazioni finali
+
+- framework test migliorabile (più intuitiva) |
+- possibilità (non immediata) di aggiungere test per algoritmi prima non testabili (es. selezione) tramite la creazione di script ad hoc |
+- refactoring di Processing in C++ |
+- porting provider (SAGA), test possibili? | 
+- tempo iniziale per testing sottostimato: |
+    - difficoltà formato file output (GML) |
+    - Travis timeout inficia e allunga molto i tempi |
+    - continuo aggiornamento algoritmi e Processing = manutenzione continua |
+ 
 
 
 
