@@ -8,6 +8,7 @@
 
 - servono per garantire la stabilità degli algoritmi |
 - procedura: |
+
     - lancio algoritmo con dati di test |
     - verifica risultati |
     - caricamento file di output sul repository |
@@ -20,6 +21,7 @@
 - esecuzione algoritmo e verifica risultati |
 - se corretti, test passato e "garanzia" stabilità algoritmo |
 - se risultati in background diversi non corrispondono, test fallisce: |
+
     - controllo algoritmo se ha errori |
     - eventuale fix |
     - controllo del risultato |
@@ -40,9 +42,11 @@
 ## Difficoltà riscontrate (2)
 
 - molti algoritmi non sono testabili: |
+
     - algoritmi che non restituiscono dati (selezione) |
     - algoritmi che caricano dati su PostGIS o SpatiaLite |
     - a volte verifiche troppo restrittive (aggiunta campo tabella, verifica estensione layer -> problema di prima) |
+    
 - tipo di output formato testo (es. info layer) difficili da testare (regex) |
 
 ---
@@ -57,6 +61,7 @@
 
 - 49 algoritmi totali |
 - 35 algoritmi testati: |
+
     - 17 algortmi corretti |
     - 18 algoritmi con problemi | 
     - 8 algoritmi mancanti |
@@ -67,6 +72,7 @@
 
 - 154 algoritmi totali |
 - 115 algoritmi testati: |
+
     - 24 algortmi corretti |
     - 29 algoritmi con problemi | 
     - 39 algoritmi mancanti |
@@ -77,6 +83,7 @@
 
 - molti algoritmi adesso sono "blindati" |
 - diversi ticket aperti e risolti: |
+
     - GDAL 7 |
     - QGIS 5 |
 
@@ -89,6 +96,7 @@
 - refactoring di Processing in C++ |
 - porting provider (SAGA), test possibili? | 
 - tempo iniziale per testing sottostimato: |
+
     - difficoltà formato file output (GML) |
     - Travis timeout inficia e allunga molto i tempi |
     - continuo aggiornamento algoritmi e Processing = manutenzione continua |
