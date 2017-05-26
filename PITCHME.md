@@ -7,6 +7,7 @@
 ## Cosa sono i test di Processing
 
 - servono per garantire la stabilità degli algoritmi |
+
 - procedura: |
 
     - lancio algoritmo con dati di test |
