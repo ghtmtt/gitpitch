@@ -49,7 +49,7 @@
 
 ## Stato dei test
 
-- tutto è su repository https://github.com/ghtmtt/qgis_test_script: |
+- tutto è su repository https://github.com/ghtmtt/qgis_test_script
 
 ---
 
