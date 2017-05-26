@@ -37,8 +37,8 @@
 ## QGIS Desktop (GUI)
 
 - 18.050 stringhe totali |
-- 99% stringhe tradotte |
-- 6102 stringhe da revisionare |
+- 99% stringhe tradotte: continuo aggiornamento di funzionalità -> continuo cambiamento stringhe |
+- 6102 stringhe da revisionare: in realtà sono 15.00 per armonizzare l'insieme |
 - tradotte 2041 stringhe anno solare 2017 |
 
 ---
@@ -60,7 +60,7 @@
 
 ---
 
-### Considerazioni generali sulla traduzione
+### Considerazioni generali sulla traduzione (1)
 
 - attività in crescita nell'ultimo periodo (ottimo!) |
 - se in dubbio su terminologia o contesto è meglio NON tradurre |
@@ -70,6 +70,13 @@
     - Tx non aiuta a capire il contesto |
 - ricco glossario da utilizzare |
 
+---
+
+### Considerazioni generali sulla traduzione (2)
+
+- la conscenza dell'inglese è necessaria: se non si è sicuri della terminologia, chiedere in lista. È più complicato correggere che tradurre |
+- se si trovano degli errori, segnalarli alla comunità! Correggerli è banale, scovarli no |
+- partecipare alle discussioni sulla terminologia sulla lista, l'opinione di tutti è importante |
 
 
 
